@@ -7,6 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Alert from "@material-ui/lab/Alert";
 import logo from "../images/RunLOGO.png"
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
@@ -16,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 function Login(props) {
   const classes = useStyles();
   const initialValues = {
@@ -24,10 +26,11 @@ function Login(props) {
   };
   // To set the message to state
   const [message, setMessage] = useState("");
+  
 
   const onSubmit = (values, tools) => {
     axios
-      .post("http://localhost:7000/user/login", values)
+      .post("https://redeemers-result.herokuapp.com/user/login", values)
       .then((res) => {
         // We retrieve the token from our response and store it in local storage
         localStorage.setItem("token", res.data.token);
