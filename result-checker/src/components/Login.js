@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import { makeStyles } from "@material-ui/core/styles";
 import Alert from "@material-ui/lab/Alert";
-import logo from "../images/RunLOGO.png"
+import logo from "../images/RunLOGO.png";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 function Login(props) {
   const classes = useStyles();
   const initialValues = {
@@ -26,7 +25,6 @@ function Login(props) {
   };
   // To set the message to state
   const [message, setMessage] = useState("");
-  
 
   const onSubmit = (values, tools) => {
     axios
