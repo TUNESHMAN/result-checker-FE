@@ -43,35 +43,31 @@ function Result() {
 
       <div className="mobile_nav">
         <div className="nav_bar">
-          <img
-            src={profile_image}
-            className="mobile_profile_image"
-            alt=""
-          />
+          <img src={profile_image} className="mobile_profile_image" alt="" />
           <i className="fa fa-bars nav_btn"></i>
         </div>
         <div className="mobile_nav_items">
-         <a href="/">
+          <a href="/">
             <i className="fas fa-desktop"></i>
             <span>Dashboard</span>
           </a>
-         <a href="/">
+          <a href="/">
             <i className="fas fa-cogs"></i>
             <span>Components</span>
           </a>
-         <a href="/">
+          <a href="/">
             <i className="fas fa-table"></i>
             <span>Tables</span>
           </a>
-         <a href="/">
+          <a href="/">
             <i className="fas fa-th"></i>
             <span>Forms</span>
           </a>
-         <a href="/">
+          <a href="/">
             <i className="fas fa-info-circle"></i>
             <span>About</span>
           </a>
-         <a href="/">
+          <a href="/">
             <i className="fas fa-sliders-h"></i>
             <span>Settings</span>
           </a>
@@ -83,46 +79,54 @@ function Result() {
           <img src={profile_image} className="profile_image" alt="" />
           <h4>Jessica</h4>
         </div>
-       <a href="/">
+        <a href="/">
           <i className="fas fa-desktop"></i>
           <span>Dashboard</span>
         </a>
-       <a href="/">
+        <a href="/">
           <i className="fas fa-cogs"></i>
           <span>Components</span>
         </a>
-       <a href="/">
+        <a href="/">
           <i className="fas fa-table"></i>
           <span>Tables</span>
         </a>
-       <a href="/">
+        <a href="/">
           <i className="fas fa-th"></i>
           <span>Forms</span>
         </a>
-       <a href="/">
+        <a href="/">
           <i className="fas fa-info-circle"></i>
           <span>About</span>
         </a>
-       <a href="/">
+        <a href="/">
           <i className="fas fa-sliders-h"></i>
           <span>Settings</span>
         </a>
       </div>
 
       <div className="content">
-        {result.map((res) => (
-          <div className="flip-card">
-            <div className="flip-card-inner">
-              <div className="flip-card-front">
-                <h2 className="course">Course:{res.courseCode}</h2>
-              </div>
-              <div className="flip-card-back">
-                <h1 className="grade">Grade:{res.Grade}</h1>
-                <p className="score">Raw Score:{res.rawScore}</p>
-              </div>
-            </div>
-          </div>
-        ))}
+        <table>
+          <thead>
+            <tr>
+              {" "}
+              <th>S/N</th>
+              <th>Course Code</th>
+              <th>Grade</th>
+              <th>Raw Score</th>
+            </tr>
+          </thead>
+          {result.map((res) => (
+            <tbody>
+              <tr>
+                <td>{res.id}</td>
+                <td>{res.courseCode}</td>
+                <td>{res.Grade}</td>
+                <td>{res.rawScore}</td>
+              </tr>
+            </tbody>
+          ))}
+        </table>
       </div>
     </React.Fragment>
   );
