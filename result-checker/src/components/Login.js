@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import { makeStyles } from "@material-ui/core/styles";
 import Alert from "@material-ui/lab/Alert";
-import logo from "../images/RunLOGO.png";
+// import logo from "../images/RunLOGO.png";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -61,7 +61,8 @@ function Login(props) {
     <div>
       <div class="login-box">
         <img
-          src={logo}
+          // src={require('../images/RunLOGO.png')}
+          src="RunLOGO.png"
           alt="logo"
           style={{ marginLeft: "120px", height: "80px" }}
         />

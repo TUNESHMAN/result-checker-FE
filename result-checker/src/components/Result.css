@@ -161,190 +161,134 @@ label #sidebar_btn:hover {
 
 .content {
   display: flex;
+  /* justify-content: space-between; */
+  flex-direction: column;
+  /* height: 500px; */
+}
+.semester {
+  display: flex;
   justify-content: space-between;
+  margin-top: 25px;
 }
 
+.semester-desc {
+  color: #0b87a6;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.gpa {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 19px;
+  color: #0b87a6;
+}
 
-
-
-table { 
-	/* width: 750px;  */
-	border-collapse: collapse; 
-	/* margin:50px auto; */
+table {
+  /* width: 750px;  */
+  border-collapse: collapse;
+  /* margin:50px auto; */
   width: 100%;
   /* height: 100%; */
-  margin-top: 60px;
-	}
+  margin-top: 40px;
+  padding: 0;
+}
 
 /* Zebra striping */
-tr:nth-of-type(odd) { 
-	background: #eee; 
-	}
+tr:nth-of-type(odd) {
+  background: #eee;
+}
 
-th { 
-	background: #3498db; 
-	color: white; 
-	font-weight: bold; 
-	}
+th {
+  background: #3498db;
+  color: white;
+  font-weight: bold;
+}
 
-td, th { 
-	padding: 10px; 
-	border: 1px solid #ccc; 
-	text-align: left; 
-	font-size: 18px;
-	}
+td,
+th {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+  font-size: 18px;
+}
 
 /* 
 Max width before this PARTICULAR table gets nasty
 This query will take effect for any screen smaller than 760px
 and also iPads specifically.
 */
-@media 
-only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  table {
+    width: 100%;
+  }
 
-	table { 
-	  	width: 100%; 
-	}
+  /* Force table to not be like tables anymore */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
 
-	/* Force table to not be like tables anymore */
-	table, thead, tbody, th, td, tr { 
-		display: block; 
-	}
-	
-	/* Hide table headers (but not display: none;, for accessibility) */
-	thead tr { 
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
-	
-	tr { border: 1px solid #ccc; }
-	
-	td { 
-		/* Behave  like a "row" */
-		border: none;
-		border-bottom: 1px solid #eee; 
-		position: relative;
-		padding-left: 50%; 
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+  }
+  
+
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    /* padding-left: 50%; */
     text-align: center;
-	}
+  }
+  
+  .semester{
+    display: flex;
+    justify-content: space-between;
+  }
+  .serial{
+    display: none;
+  }
 
-	td:before { 
-		/* Now like a table header */
-		position: absolute;
-		/* Top/left values mimic padding */
-		top: 6px;
-		left: 6px;
-		width: 45%; 
-		padding-right: 10px; 
-		white-space: nowrap;
-		/* Label the data */
-		content: attr(data-column);
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    /* Label the data */
+    content: attr(data-column);
 
-		color: #000;
-		font-weight: bold;
-	}
-
-}
-th,td{
-  text-align: center;
-}
-
-/* .card{
-    border: 2px solid #19b3d3 ;
-    height: 150px;
-    width: 130px;
-    border-radius: 8px;
-    background: darkgrey;
-    perspective: 1000px;
-    
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-}
-.content .card h2 {
-  background: #fff;
-  padding: 15px;
-  margin-bottom: 10px;
-  font-size: 14px;
-  opacity: 0.8;
-  text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background: darkgrey;
-}
-
-.content .card p {
-    background: #fff;
-    padding: 15px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    opacity: 0.8;
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
+    color: #000;
     font-weight: bold;
-    background: darkgrey;
-  } */
-
-.flip-card {
-  background-color: transparent;
-  width: 300px;
-  height: 200px;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
 }
-
-/* This container is needed to position the front and back side */
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
+th,
+td {
   text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-  outline: none;
-}
-.grade {
-  margin-top: 15px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-}
-.score {
-  /* font-weight: bold; */
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
 
-/* Position the front and back side */
-.flip-card-front,
-.flip-card-back {
-  border-radius: 15px;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
-}
 
-/* Style the front side (fallback if image is missing) */
-.flip-card-front {
-  background-color: #bbb;
-  align-items: center;
-}
-.course {
-  font-family: sans-serif;
-  color: firebrick;
-  margin-top: 55px;
-}
 
-/* Style the back side */
-.flip-card-back {
-  background-color: dodgerblue;
-  color: white;
-  transform: rotateY(180deg);
-}
+
+
+
 /* Responsive CSS */
 
 @media screen and (max-width: 780px) {
